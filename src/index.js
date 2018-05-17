@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+//import { AppRegistry, View } from 'react-native';
 
 //Square component renders a single <button>
 function Square(props) {
+  const divStyle = {
+    color: 'blue',
+    height: 100,
+    width: 100
+  };
     return (
-      <button className="square" onClick={props.onClick}>
+      <button style={divStyle} className="square" onClick={props.onClick}>
       {props.value}
       </button>
     );
@@ -99,13 +105,13 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game-board">
-          <Board
+          <Board 
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div style = {{fontSize: '3em', color: 'blue'}}>{status}</div>
           <ol>{/* TODO */}</ol>
         </div>
       </div>
